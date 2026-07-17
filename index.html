@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAGE OS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- Boot Screen -->
+    <!-- ========================= -->
+
+    <div id="bootScreen">
+
+        <h1>SAGE OS</h1>
+
+        <div id="bootLog"></div>
+
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+
+        <p id="clickText" class="hidden">
+            Tap anywhere to proceed
+        </p>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- Login Screen -->
+    <!-- ========================= -->
+
+    <div id="loginScreen" class="hidden">
+
+        <div class="loginWindow">
+
+            <h1>SAGE OS</h1>
+
+            <p class="subtitle">
+                Forest Authentication Terminal
+            </p>
+
+            <div class="inputGroup">
+                <label>Traveler Name</label>
+
+                <input
+                    id="username"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Enter traveler name">
+            </div>
+
+            <div class="inputGroup">
+                <label>Secret Passphrase</label>
+
+                <input
+                    id="password"
+                    type="password"
+                    autocomplete="off"
+                    placeholder="********">
+            </div>
+
+            <button id="loginButton">
+                LOG IN
+            </button>
+
+            <div id="loginStatus">
+                Awaiting authentication...
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- Message Screen -->
+    <!-- ========================= -->
+
+    <div id="messageScreen" class="hidden">
+
+        <div class="terminal">
+
+            <h1>SAGE OS</h1>
+
+            <pre id="typedMessage"></pre>
+
+            <span id="cursor">█</span>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- Secret Message -->
+    <!-- ========================= -->
+
+    <div id="secretMessageScreen" class="hidden">
+
+        <div class="terminal">
+
+            <h1>SAGE OS</h1>
+
+            <pre id="secretTypedMessage"></pre>
+
+            <span id="secretCursor">█</span>
+
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!-- Secret Message 2 -->
+    <!-- ========================= -->
+
+    <div id="secretMessageScreen2" class="hidden">
+
+        <div class="terminal">
+
+            <h1>SAGE OS</h1>
+
+            <pre id="secretTypedMessage2"></pre>
+
+            <span id="secretCursor2">█</span>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
