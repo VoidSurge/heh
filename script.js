@@ -98,7 +98,7 @@ addBootMessage();
 // Boot -> Login
 // ===============================
 
-document.addEventListener("click", () => {
+bootScreen.addEventListener("click", () => {
 
     if (bootIndex < bootMessages.length) return;
 
@@ -113,7 +113,7 @@ document.addEventListener("click", () => {
 
     }, 500);
 
-});
+}, { once: true });
 
 // ===============================
 // Authentication
