@@ -36,6 +36,7 @@ const secretPassword2 = "mole";
 // Boot Messages
 // ===============================
 
+let bootFinished = false;
 const bootMessages = [
     "Initializing...",
     "✓ Loading kernel...",
@@ -71,6 +72,7 @@ function addBootMessage() {
     if (bootIndex >= bootMessages.length) {
 
         clickText.classList.remove("hidden");
+        bootFinished = true;
         return;
 
     }
@@ -98,9 +100,9 @@ addBootMessage();
 // Boot -> Login
 // ===============================
 
-bootScreen.addEventListener("click", () => {
+document.addEventListener("click", function proceedToLogin() {
 
-    if (bootIndex < bootMessages.length) return;
+    if (!bootFinished) return;
 
     bootScreen.style.opacity = "0";
 
@@ -113,7 +115,9 @@ bootScreen.addEventListener("click", () => {
 
     }, 500);
 
-}, { once: true });
+    document.removeEventListener("click", proceedToLogin);
+
+});
 
 // ===============================
 // Authentication
